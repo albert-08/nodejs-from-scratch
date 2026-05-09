@@ -27,15 +27,23 @@ exports.createUser = async (req, res) => {
     
 }
 
-exports.updateUser = (req, res) => {
+exports.updateUser = async (req, res) => {
     let data = req.body
-    const { name, lastname, email, phone } = data
-    console.log(req.params.id)
-    console.log(name, lastname, email, phone)
+    const id = req.params.id
+    const user = await userService.filterById(id)
+    if (!user) {
+        return res.status(400).json({'message': "Usuario no encontrado"})
+    }
+    await userService.update(id, data)
     res.status(200).send('Usuario actualizado')
 }
 
-exports.deleteUser = (req, res) => {
-    console.log(req.params.id)
+exports.deleteUser = async (req, res) => {
+    const id = req.params.id
+    const user = await userService.filterById(id)
+    if (!user) {
+        return res.status(400).json({'message': "Usuario no encontrado"})
+    }
+    await userService.delete(id)
     res.status(200).send('Usuario eliminado')
 }

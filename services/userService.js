@@ -17,6 +17,14 @@ class UserService{
     const user = new User(data)
     return await user.save()
   }
+
+  async update(id, data){
+    return await User.findByIdAndUpdate({_id:id}, data)
+  }
+
+  async delete(id){
+    return await User.deleteOne({_id:id})
+  }
 }
 
 module.exports = UserService
