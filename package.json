@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-from-scratch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albert-08/nodejs-from-scratch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albert-08/nodejs-from-scratch/issues"
+  },
+  "homepage": "https://github.com/albert-08/nodejs-from-scratch#readme",
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2",
+    "morgan": "^1.10.1"
+  }
+}
